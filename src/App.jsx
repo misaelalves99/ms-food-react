@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Orders from './pages/Orders'
 import Footer from './pages/Footer'
 import Layout from './components/Layout'
-import './App.css'
+import './App.module.css'
 
 function App() {
   return (

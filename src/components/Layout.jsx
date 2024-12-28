@@ -1,6 +1,8 @@
+import styles from './Layout.module.css';
+
 function Layout({ children }) {
     return ( 
-        <div>
+        <div className={styles.container}>
             {children}
         </div>
      );
