@@ -1,0 +1,369 @@
+{
+  "cardapio": {
+    "acompanhamentos": [
+      {
+        "id": 1,
+        "tipo": "Abóbora"
+      },
+      {
+        "id": 2,
+        "tipo": "Arroz"
+      },
+      {
+        "id": 3,
+        "tipo": "Batata frita"
+      },
+      {
+        "id": 4,
+        "tipo": "Estrogonofe"
+      },
+      {
+        "id": 5,
+        "tipo": "Ervilha"
+      },
+      {
+        "id": 6,
+        "tipo": "Farofa"
+      },
+      {
+        "id": 7,
+        "tipo": "Feijão"
+      },
+      {
+        "id": 8,
+        "tipo": "Mandioca"
+      },
+      {
+        "id": 9,
+        "tipo": "Milho verde"
+      },
+      {
+        "id": 10,
+        "tipo": "Ovo"
+      },
+      {
+        "id": 11,
+        "tipo": "Purê de batata"
+      }
+    ],
+    "carne": [
+      {
+        "id": 1,
+        "tipo": "Alcatra"
+      },
+      {
+        "id": 2,
+        "tipo": "Bife à milanesa"
+      },
+      {
+        "id": 3,
+        "tipo": "Contrafilé"
+      },
+      {
+        "id": 4,
+        "tipo": "Costela bovinae"
+      },
+      {
+        "id": 5,
+        "tipo": "Costela suína"
+      },
+      {
+        "id": 6,
+        "tipo": "Cupim"
+      },
+      {
+        "id": 7,
+        "tipo": "Filé de frango"
+      },
+      {
+        "id": 8,
+        "tipo": "Filé mignon"
+      },
+      {
+        "id": 9,
+        "tipo": "Filé de porco"
+      },
+      {
+        "id": 10,
+        "tipo": "Fraldinha"
+      },
+      {
+        "id": 11,
+        "tipo": "Frango à milanesa"
+      },
+      {
+        "id": 12,
+        "tipo": "Frango à passarinho"
+      },
+      {
+        "id": 13,
+        "tipo": "Linguiça"
+      },
+      {
+        "id": 14,
+        "tipo": "Lombo suíno"
+      },
+      {
+        "id": 15,
+        "tipo": "Picanha"
+      },
+      {
+        "id": 16,
+        "tipo": "Torresmo"
+      }
+    ],
+    "salada": [
+      {
+        "id": 1,
+        "tipo": "Alface"
+      },
+      {
+        "id": 2,
+        "tipo": "Beterraba"
+      },
+      {
+        "id": 3,
+        "tipo": "Brócolis"
+      },
+      {
+        "id": 4,
+        "tipo": "Cebola"
+      },
+      {
+        "id": 5,
+        "tipo": "Cenoura"
+      },
+      {
+        "id": 6,
+        "tipo": "Couve"
+      },
+      {
+        "id": 7,
+        "tipo": "Couve-flor"
+      },
+      {
+        "id": 8,
+        "tipo": "Espinafre"
+      },
+      {
+        "id": 9,
+        "tipo": "Pepino"
+      },
+      {
+        "id": 10,
+        "tipo": "Repolho"
+      },
+      {
+        "id": 11,
+        "tipo": "Salpicão"
+      },
+      {
+        "id": 12,
+        "tipo": "Tomate"
+      }
+    ],
+    "massas": [
+      {
+        "id": 1,
+        "tipo": "Espaguete"
+      },
+      {
+        "id": 2,
+        "tipo": "Lasanha"
+      },
+      {
+        "id": 3,
+        "tipo": "Macarrão"
+      }
+    ],
+    "suco natural": [
+      {
+        "id": 1,
+        "tipo": "Abacaxi"
+      },
+      {
+        "id": 2,
+        "tipo": "Caju"
+      },
+      {
+        "id": 3,
+        "tipo": "Laranja"
+      },
+      {
+        "id": 4,
+        "tipo": "Limão"
+      },
+      {
+        "id": 5,
+        "tipo": "Manga"
+      },
+      {
+        "id": 6,
+        "tipo": "Maracujá"
+      }
+    ],
+    "refrigerante": [
+      {
+        "id": 1,
+        "tipo": "Abacaxi"
+      },
+      {
+        "id": 2,
+        "tipo": "Cola"
+      },
+      {
+        "id": 3,
+        "tipo": "Guaraná"
+      },
+      {
+        "id": 4,
+        "tipo": "Laranja"
+      },
+      {
+        "id": 5,
+        "tipo": "Limão"
+      },
+      {
+        "id": 6,
+        "tipo": "Uva"
+      }
+    ]
+  },
+  "status": [
+    {
+      "id": "1",
+      "tipo": "Cancelado"
+    },
+    {
+      "id": "2",
+      "tipo": "Em produção"
+    },
+    {
+      "id": "3",
+      "tipo": "Finalizado"
+    },
+    {
+      "id": "4",
+      "tipo": "Solicitado"
+    }
+  ],
+  "comidas": [
+    {
+      "nome": "Misael Alves",
+      "companhamentos": "Feijão",
+      "carne": "Filé de frango",
+      "salada": "Beterraba",
+      "massas": "Espaguete",
+      "suco natural": "Laranja",
+      "refrigerante": "Cola",
+      "status": "Finalizado",
+      "id": "1"
+    },
+    {
+      "nome": "Amanda Santos",
+      "companhamentos": "Arroz",
+      "carne": "Torresmo",
+      "salada": "Repolho",
+      "massas": "Lasanha",
+      "suco natural": "Abacaxi",
+      "refrigerante": "Guaraná",
+      "status": "Solicitado",
+      "id": "2"
+    },
+    {
+      "nome": "Gilberto Pereira",
+      "companhamentos": "Feijão",
+      "carne": "Picanha",
+      "salada": "Salpicão",
+      "massas": "Macarrão",
+      "suco natural": "Maracujá",
+      "refrigerante": "Laranja",
+      "status": "Em produção",
+      "id": "3"
+    },
+    {
+      "nome": "Sophia Silva",
+      "companhamentos": "Arroz",
+      "carne": "Linguiça",
+      "salada": "Tomate",
+      "massas": "Lasanha",
+      "suco natural": "Caju",
+      "refrigerante": "Guaraná",
+      "status": "Cancelado",
+      "id": "4"
+    },
+    {
+      "nome": "Lorraine Neves",
+      "companhamentos": "Feijão",
+      "carne": "Frango à milanesa",
+      "salada": "Cenoura",
+      "massas": "Espaguete",
+      "suco natural": "Manga",
+      "refrigerante": "Uva",
+      "status": "Finalizado",
+      "id": "5"
+    },
+    {
+      "id": "d4b8",
+      "nome": "Misael Alves dos Santos",
+      "acompanhamentos": "Feijão",
+      "carne": "Frango",
+      "salada": "Tomate",
+      "massa": "Macarrão",
+      "suco": [
+        "Laranja",
+        "Abacaxi"
+      ],
+      "refrigerante": [
+        "Cola"
+      ],
+      "status": "Solicitado"
+    },
+    {
+      "id": "5c81",
+      "nome": "Misael Alves dos Santos",
+      "acompanhamentos": "Feijão",
+      "carne": "Frango",
+      "salada": "Tomate",
+      "massa": "Macarrão",
+      "suco": [
+        "Laranja"
+      ],
+      "refrigerante": [
+        "Cola"
+      ],
+      "status": "Solicitado"
+    },
+    {
+      "id": "8bd3",
+      "nome": "Misael Alves dos Santos",
+      "acompanhamentos": "Arroz",
+      "carne": "Carne de Porco",
+      "salada": "Alface",
+      "massa": "Lasanha",
+      "suco": [
+        "Caju"
+      ],
+      "refrigerante": [
+        "Cola"
+      ],
+      "status": "Solicitado"
+    },
+    {
+      "id": "7f1f",
+      "nome": "João Garcia",
+      "acompanhamentos": "Arroz",
+      "carne": "Carne de Porco",
+      "salada": "Alface",
+      "massa": "Macarrão",
+      "suco": [
+        "Abacaxi",
+        "Laranja"
+      ],
+      "refrigerante": [
+        "Cola"
+      ],
+      "status": "Solicitado"
+    }
+  ]
+}
