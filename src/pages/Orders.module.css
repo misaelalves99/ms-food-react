@@ -1,9 +1,9 @@
 .orders {
-    height: 80vh;
+    min-height: 80vh;
     text-align: center;
     padding: 2rem;
     background-color: #e8f5e9;
-    padding: 20px;
+    padding: 50px;
     background-color: #f9f9f9;
 }
   
@@ -29,6 +29,11 @@ th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    text-align: left; /* Alinha o texto à esquerda */
+    vertical-align: top; /* Alinha o texto ao topo da célula */
+    word-wrap: break-word; /* Quebra palavras longas, se necessário */
+    padding: 12px;
+    white-space: normal; /* Permite que o texto quebre linhas */
 }
 
 th {
@@ -38,6 +43,16 @@ th {
 
 tr:hover {
     background-color: #f1f1f1;
+}
+
+ul {
+    list-style-type: square; /* Remove os marcadores da lista */
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 4px; /* Adiciona espaçamento entre os itens */
 }
 
 .button {
@@ -52,4 +67,25 @@ tr:hover {
 
 .button:hover {
     background-color: #45a049;
+}
+
+select {
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cancelButton {
+    background-color: black;
+    color: #F7931E;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cancelButton:hover {
+    background-color: #F7931E;
+    color: white;
 }

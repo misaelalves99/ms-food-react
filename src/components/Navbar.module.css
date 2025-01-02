@@ -2,13 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 5rem;
     background-color: #1A1A1A;
     color: white;
 }
   
 .logo img {
-    width: 60px;
+    width: 45px;
 }
   
 .nav ul {
@@ -26,9 +26,12 @@
 .nav a {
     text-decoration: none;
     color: white;
-    transition: color 0.3s ease;
+    padding: 0.6rem; /* Define o padding fixo */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Apenas altera cor e fundo no hover */
+    display: inline-block; /* Garante que o padding funcione */
 }
   
 .nav a:hover {
+    background-color: #F7931E;
     color: #ffdfd3;
 }

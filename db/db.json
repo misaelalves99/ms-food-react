@@ -232,136 +232,77 @@
   "status": [
     {
       "id": "1",
-      "tipo": "Cancelado"
-    },
-    {
-      "id": "2",
       "tipo": "Em produção"
     },
     {
-      "id": "3",
+      "id": "2",
       "tipo": "Finalizado"
     },
     {
-      "id": "4",
+      "id": "3",
       "tipo": "Solicitado"
     }
   ],
   "comidas": [
     {
+      "id": "1",
       "nome": "Misael Alves",
       "companhamentos": "Feijão",
       "carne": "Filé de frango",
       "salada": "Beterraba",
-      "massas": "Espaguete",
-      "suco natural": "Laranja",
+      "massa": "Espaguete",
+      "suco": "Laranja",
       "refrigerante": "Cola",
-      "status": "Finalizado",
-      "id": "1"
+      "status": "Em produção"
     },
     {
+      "id": "2",
       "nome": "Amanda Santos",
       "companhamentos": "Arroz",
       "carne": "Torresmo",
       "salada": "Repolho",
-      "massas": "Lasanha",
-      "suco natural": "Abacaxi",
+      "massa": "Lasanha",
+      "suco": "Abacaxi",
       "refrigerante": "Guaraná",
-      "status": "Solicitado",
-      "id": "2"
+      "status": "Em produção"
     },
     {
+      "id": "3",
       "nome": "Gilberto Pereira",
       "companhamentos": "Feijão",
       "carne": "Picanha",
       "salada": "Salpicão",
-      "massas": "Macarrão",
-      "suco natural": "Maracujá",
+      "massa": "Macarrão",
+      "suco": "Maracujá",
       "refrigerante": "Laranja",
-      "status": "Em produção",
-      "id": "3"
+      "status": "Solicitado"
     },
     {
+      "id": "4",
       "nome": "Sophia Silva",
       "companhamentos": "Arroz",
       "carne": "Linguiça",
       "salada": "Tomate",
-      "massas": "Lasanha",
-      "suco natural": "Caju",
+      "massa": "Lasanha",
+      "suco": "Caju",
       "refrigerante": "Guaraná",
-      "status": "Cancelado",
-      "id": "4"
+      "status": "Cancelado"
     },
     {
-      "nome": "Lorraine Neves",
-      "companhamentos": "Feijão",
-      "carne": "Frango à milanesa",
-      "salada": "Cenoura",
-      "massas": "Espaguete",
-      "suco natural": "Manga",
-      "refrigerante": "Uva",
-      "status": "Finalizado",
-      "id": "5"
-    },
-    {
-      "id": "d4b8",
-      "nome": "Misael Alves dos Santos",
-      "acompanhamentos": "Feijão",
-      "carne": "Frango",
-      "salada": "Tomate",
-      "massa": "Macarrão",
-      "suco": [
-        "Laranja",
-        "Abacaxi"
-      ],
-      "refrigerante": [
-        "Cola"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "5c81",
-      "nome": "Misael Alves dos Santos",
-      "acompanhamentos": "Feijão",
-      "carne": "Frango",
-      "salada": "Tomate",
-      "massa": "Macarrão",
-      "suco": [
-        "Laranja"
-      ],
-      "refrigerante": [
-        "Cola"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "8bd3",
-      "nome": "Misael Alves dos Santos",
-      "acompanhamentos": "Arroz",
-      "carne": "Carne de Porco",
-      "salada": "Alface",
+      "id": "1735788436597",
+      "nome": "Sonia",
+      "acompanhamentos": "Batata frita",
+      "carne": "Lombo suíno",
+      "salada": "Repolho",
       "massa": "Lasanha",
       "suco": [
-        "Caju"
-      ],
-      "refrigerante": [
-        "Cola"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "7f1f",
-      "nome": "João Garcia",
-      "acompanhamentos": "Arroz",
-      "carne": "Carne de Porco",
-      "salada": "Alface",
-      "massa": "Macarrão",
-      "suco": [
         "Abacaxi",
-        "Laranja"
+        "Laranja",
+        "Manga"
       ],
       "refrigerante": [
-        "Cola"
+        "Abacaxi",
+        "Guaraná"
       ],
       "status": "Solicitado"
     }

@@ -23,14 +23,19 @@
 
 .title {
     font-size: 2.5rem;
-    color: #000;
+    color: #4c4c4c;
     margin-bottom: 0.5rem;
 }
 
 .subtitle {
+    max-width: 200px;
+    text-align: center;
     font-size: 1.2rem;
-    color: #F7931E;
+    background-color: #F7931E;
+    color: #4c4c4c;
+    margin: auto;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .form {

@@ -1,12 +1,14 @@
 import styles from './Navbar.module.css';
 import { Link } from "react-router-dom";
-// import Logo from "../assets/Logo.png";
+import Logo from "../assets/Logo.png";
 
 function Navbar() {
     return ( 
         <header className={styles.header}>
             <div className={styles.logo}>
-                <Link to="/"><img src="../assets/Logo.png" alt="Logo" /></Link>
+                <Link to="/">
+                    <img src={Logo} alt={Logo} />
+                </Link>
             </div>
             <nav className={styles.nav}>
                 <ul>

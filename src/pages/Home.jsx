@@ -1,6 +1,6 @@
 import styles from './Home.module.css';
 import Hero from '../components/Hero';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { OrdersContext } from '../context/OrdersContext';
 
 function Home() {
@@ -17,6 +17,36 @@ function Home() {
     });
 
     const [errors, setErrors] = useState({});
+
+    const [options, setOptions] = useState({
+        acompanhamentos: [],
+        carne: [],
+        salada: [],
+        massas: [],
+        suco: [],
+        refrigerante: []
+    });
+
+    useEffect(() => {
+        const fetchOptions = async () => {
+            try {
+                const response = await fetch('http://localhost:3001/cardapio');
+                const data = await response.json();
+                setOptions({
+                    acompanhamentos: data.acompanhamentos,
+                    carne: data.carne,
+                    salada: data.salada,
+                    massas: data.massas,
+                    suco: data['suco natural'],
+                    refrigerante: data.refrigerante
+                });
+            } catch (error) {
+                console.error('Erro ao buscar cardápio:', error);
+            }
+        };
+
+        fetchOptions();
+    }, []);
 
     const validateForm = () => {
         const newErrors = {};
@@ -62,27 +92,47 @@ function Home() {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validateForm()) return;
     
         const newOrder = {
             ...formData,
             status: 'Solicitado',
-            id: Date.now().toString(),
+            id: Date.now().toString(), // ID temporário
         };
     
-        addOrder(newOrder); // Adiciona o pedido ao contexto
-        alert('Pedido enviado com sucesso!');
-        setFormData({
-            nome: '',
-            acompanhamentos: '',
-            carne: '',
-            salada: '',
-            massa: '',
-            suco: [],
-            refrigerante: [],
-        });
+        try {
+            // Adiciona o pedido ao servidor
+            const response = await fetch('http://localhost:3001/comidas', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newOrder),
+            });
+    
+            if (!response.ok) {
+                throw new Error('Erro ao enviar o pedido para o servidor');
+            }
+    
+            const savedOrder = await response.json(); // Resposta com o ID gerado pelo servidor
+            addOrder(savedOrder); // Adiciona ao contexto
+    
+            alert('Pedido enviado com sucesso!');
+            setFormData({
+                nome: '',
+                acompanhamentos: '',
+                carne: '',
+                salada: '',
+                massa: '',
+                suco: [],
+                refrigerante: [],
+            });
+        } catch (error) {
+            console.error('Erro ao enviar pedido:', error);
+            alert('Não foi possível enviar o pedido. Tente novamente.');
+        }
     };
 
     return (
@@ -90,6 +140,7 @@ function Home() {
             <Hero />
             <section className={styles.formSection}>
                 <h1 className={styles.title}>Escolha o prato:</h1>
+                <h2 className={styles.subtitle}>Feito com amor!</h2>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <label htmlFor="nome" className={styles.label}>Nome do cliente:</label>
                     <input
@@ -100,7 +151,6 @@ function Home() {
                         onChange={handleChange}
                         className={styles.input}
                     />
-
                     {errors.nome && <p className={styles.error}>{errors.nome}</p>}
 
                     <label htmlFor="acompanhamentos" className={styles.label}>Acompanhamentos</label>
@@ -111,9 +161,11 @@ function Home() {
                         className={styles.select}
                     >
                         <option value="">Selecione um alimento</option>
-                        <option value="Arroz">Arroz</option>
-                        <option value="Batata Frita">Batata Frita</option>
-                        <option value="Feijão">Feijão</option>
+                        {options.acompanhamentos.map((item) => (
+                            <option key={item.id} value={item.tipo}>
+                                {item.tipo}
+                            </option>
+                        ))}
                     </select>
                     {errors.acompanhamentos && <p className={styles.error}>{errors.acompanhamentos}</p>}
 
@@ -125,13 +177,13 @@ function Home() {
                         className={styles.select}
                     >
                         <option value="">Selecione um alimento</option>
-                        <option value="Frango">Frango</option>
-                        <option value="Carne de Porco">Carne de Porco</option>
-                        <option value="Peixe">Peixe</option>
+                        {options.carne.map((item) => (
+                            <option key={item.id} value={item.tipo}>
+                                {item.tipo}
+                            </option>
+                        ))}
                     </select>
                     {errors.carne && <p className={styles.error}>{errors.carne}</p>}
-
-                    {/* Seções de inputs, acompanhamentos, carnes, saladas, etc., seguem o mesmo padrão */}
 
                     <label htmlFor="salada" className={styles.label}>Saladas</label>
                     <select
@@ -141,9 +193,11 @@ function Home() {
                         className={styles.select}
                     >
                         <option value="">Selecione um alimento</option>
-                        <option value="Alface">Alface</option>
-                        <option value="Tomate">Tomate</option>
-                        <option value="Cenoura">Cenoura</option>
+                        {options.salada.map((item) => (
+                            <option key={item.id} value={item.tipo}>
+                                {item.tipo}
+                            </option>
+                        ))}
                     </select>
                     {errors.salada && <p className={styles.error}>{errors.salada}</p>}
 
@@ -155,45 +209,29 @@ function Home() {
                         className={styles.select}
                     >
                         <option value="">Selecione um alimento</option>
-                        <option value="Macarrão">Macarrão</option>
-                        <option value="Lasanha">Lasanha</option>
-                        <option value="Talharim">Talharim</option>
+                        {options.massas.map((item) => (
+                            <option key={item.id} value={item.tipo}>
+                                {item.tipo}
+                            </option>
+                        ))}
                     </select>
                     {errors.massa && <p className={styles.error}>{errors.massa}</p>}
 
-                    {/* Outras seções omitidas por simplicidade */}
-                    
                     <fieldset className={styles.fieldset}>
                         <legend className={styles.legend}>Suco Natural</legend>
                         <div className={styles.checkboxGroup}>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="Abacaxi"
-                                    id="suco"
-                                    checked={formData.suco.includes('Abacaxi')}
-                                    onChange={handleChange}
-                                /> Abacaxi
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="Caju"
-                                    id="suco"
-                                    checked={formData.suco.includes('Caju')}
-                                    onChange={handleChange}
-                                /> Caju
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="Laranja"
-                                    id="suco"
-                                    checked={formData.suco.includes('Laranja')}
-                                    onChange={handleChange}
-                                /> Laranja
-                            </label>
-                            {/* Outras opções */}
+                            {options.suco.map((item) => (
+                                <label key={item.id}>
+                                    <input
+                                        type="checkbox"
+                                        value={item.tipo}
+                                        id="suco"
+                                        checked={formData.suco.includes(item.tipo)}
+                                        onChange={handleChange}
+                                    />
+                                    {item.tipo}
+                                </label>
+                            ))}
                         </div>
                         {errors.suco && <p className={styles.error}>{errors.suco}</p>}
                     </fieldset>
@@ -201,34 +239,18 @@ function Home() {
                     <fieldset className={styles.fieldset}>
                         <legend className={styles.legend}>Refrigerante</legend>
                         <div className={styles.checkboxGroup}>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="Cola"
-                                    id="refrigerante"
-                                    checked={formData.refrigerante.includes('Cola')}
-                                    onChange={handleChange}
-                                /> Cola
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="Guaraná"
-                                    id="refrigerante"
-                                    checked={formData.refrigerante.includes('Guaraná')}
-                                    onChange={handleChange}
-                                /> Guaraná
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="Laranja"
-                                    id="refrigerante"
-                                    checked={formData.refrigerante.includes('Laranja')}
-                                    onChange={handleChange}
-                                /> Laranja
-                            </label>
-                            {/* Outras opções */}
+                            {options.refrigerante.map((item) => (
+                                <label key={item.id}>
+                                    <input
+                                        type="checkbox"
+                                        value={item.tipo}
+                                        id="refrigerante"
+                                        checked={formData.refrigerante.includes(item.tipo)}
+                                        onChange={handleChange}
+                                    />
+                                    {item.tipo}
+                                </label>
+                            ))}
                         </div>
                         {errors.refrigerante && <p className={styles.error}>{errors.refrigerante}</p>}
                     </fieldset>
