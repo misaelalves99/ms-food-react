@@ -20,6 +20,8 @@
 }
   
 .nav li {
+    font-family: "Raleway", serif;
+    font-weight: bolder;
     font-size: 1.2rem;
 }
   
