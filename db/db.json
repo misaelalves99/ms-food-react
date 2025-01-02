@@ -305,6 +305,24 @@
         "Guaraná"
       ],
       "status": "Solicitado"
+    },
+    {
+      "id": "1735838693543",
+      "nome": "Beatriz",
+      "acompanhamentos": "Batata frita",
+      "carne": "Linguiça",
+      "salada": "Salpicão",
+      "massa": "Espaguete",
+      "suco": [
+        "Abacaxi",
+        "Laranja",
+        "Caju"
+      ],
+      "refrigerante": [
+        "Abacaxi",
+        "Guaraná"
+      ],
+      "status": "Solicitado"
     }
   ]
 }

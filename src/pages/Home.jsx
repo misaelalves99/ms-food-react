@@ -30,7 +30,7 @@ function Home() {
     useEffect(() => {
         const fetchOptions = async () => {
             try {
-                const response = await fetch('http://localhost:3001/cardapio');
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/cardapio`);
                 const data = await response.json();
                 setOptions({
                     acompanhamentos: data.acompanhamentos,

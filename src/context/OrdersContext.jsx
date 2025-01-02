@@ -8,7 +8,8 @@ export function OrdersProvider({ children }) {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await fetch('http://localhost:3001/comidas');
+                // Usa a variável de ambiente para a URL da API
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/comidas`);
                 const data = await response.json();
                 setOrders(data);
             } catch (error) {

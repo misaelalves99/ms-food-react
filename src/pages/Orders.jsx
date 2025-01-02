@@ -10,8 +10,8 @@ function Orders() {
         const fetchOrdersAndStatuses = async () => {
             try {
                 const [ordersResponse, statusesResponse] = await Promise.all([
-                    fetch('http://localhost:3001/comidas'),
-                    fetch('http://localhost:3001/status')
+                    fetch(`${import.meta.env.VITE_API_URL}/comidas`),
+                    fetch(`${import.meta.env.VITE_API_URL}/status`)
                 ]);
                 const ordersData = await ordersResponse.json();
                 const statusesData = await statusesResponse.json();
