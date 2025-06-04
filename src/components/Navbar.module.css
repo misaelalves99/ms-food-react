@@ -1,39 +1,36 @@
+/* Navbar.module.css */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5rem;
-    background-color: #1A1A1A;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-  
+
 .logo img {
-    width: 45px;
+  height: auto;
+  width: auto;
 }
-  
+
 .nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
-  
-.nav li {
-    font-family: "Raleway", serif;
-    font-weight: bolder;
-    font-size: 1.2rem;
-}
-  
+
 .nav a {
-    text-decoration: none;
-    color: white;
-    padding: 0.6rem; /* Define o padding fixo */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Apenas altera cor e fundo no hover */
-    display: inline-block; /* Garante que o padding funcione */
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
 }
-  
+
 .nav a:hover {
-    background-color: #F7931E;
-    color: #ffdfd3;
+  color: #ff4b2b;
 }
